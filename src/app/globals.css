@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary: #001B55;      /* Biru Tua - Main brand color */
+  --accent: #FF9C04;       /* Kuning Jingga - Accent color */
+  --white: #FFFFFF;        /* Putih - Main text */
+  --light-bg: #F0F0F0;     /* Abu Muda - Background sections */
+  --danger: #C81E1E;       /* Merah Tua - Call to action */
+  
+  /* Supporting Colors */
+  --primary-light: #1a4480;
+  --primary-dark: #000f33;
+  --accent-light: #ffb147;
+  --accent-dark: #e68803;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 27, 85, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #fafafa 100%);
+  color: var(--primary);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/***** Helpers *****/
+.section-title { 
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+.hero-title { 
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+.subtle { color: var(--text-muted); }
+
+.card-surface {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -10px var(--shadow), 0 4px 6px -2px rgba(0, 27, 85, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.5rem; border-radius: 9999px; font-weight: 600;
+  background: var(--accent); color: var(--white); 
+  transition: all .2s ease;
+  box-shadow: 0 4px 14px 0 rgba(255, 156, 4, 0.3);
+}
+.btn-primary:hover { 
+  background: var(--accent-dark);
+  box-shadow: 0 6px 20px 0 rgba(255, 156, 4, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.5rem; border-radius: 9999px; font-weight: 600;
+  border: 2px solid var(--primary); color: var(--primary);
+  background: transparent; transition: all .2s ease;
+}
+.btn-outline:hover { 
+  background: var(--primary); 
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.5rem; border-radius: 9999px; font-weight: 600;
+  background: var(--danger); color: var(--white);
+  transition: all .2s ease;
+  box-shadow: 0 4px 14px 0 rgba(200, 30, 30, 0.3);
+}
+.btn-danger:hover {
+  background: #a01717;
+  box-shadow: 0 6px 20px 0 rgba(200, 30, 30, 0.4);
+  transform: translateY(-2px);
+}
+
+.fade-in { animation: fadeIn .8s ease-out both; }
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(8px) scale(.98); } 
+  to { opacity: 1; transform: translateY(0) scale(1); } 
 }
