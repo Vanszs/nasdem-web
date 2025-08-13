@@ -4,10 +4,13 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  ["Product", "#collection"],
-  ["Lifestyle", "#highlight"],
-  ["News", "#metrics"],
-  ["Projects", "#modern"],
+  ["Beranda", "/"],
+  ["Profil Partai", "/profil"],
+  ["Program & Kegiatan", "/program"],
+  ["Berita & Artikel", "/berita"],
+  ["Galeri", "/galeri"],
+  ["Anggota", "/anggota"],
+  ["Sosial", "/sosial"],
 ] as const;
 
 export default function Navbar() {
@@ -20,20 +23,28 @@ export default function Navbar() {
           href="/"
           className="font-extrabold text-2xl tracking-tight text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
         >
-          Poliform
+          Partai<span className="text-[var(--accent)]">Nusantara</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[color:rgba(var(--primary-rgb),0.75)]">
-          {navItems.map(([label, href]) => (
-            <Link
-              key={label}
-              href={href}
-              className="transition-colors hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-8 text-sm font-medium text-[color:rgba(var(--primary-rgb),0.75)]">
+            {navItems.map(([label, href]) => (
+              <Link
+                key={label}
+                href={href}
+                className="transition-colors hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <Link
+            href="/admin/login"
+            className="btn-outline text-sm px-4 py-2 rounded-full"
+          >
+            Login Admin
+          </Link>
+        </div>
 
         <button
           className="md:hidden p-2 rounded-full border border-[color:rgba(var(--primary-rgb),0.2)] hover:bg-[color:rgba(var(--primary-rgb),0.05)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
@@ -67,6 +78,13 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
+            <Link
+              href="/admin/login"
+              onClick={() => setOpen(false)}
+              className="mt-2 btn-outline text-center"
+            >
+              Login Admin
+            </Link>
           </div>
         </div>
       )}

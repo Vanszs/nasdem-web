@@ -1,31 +1,146 @@
 @import "tailwindcss";
 
+/*
+  Design tokens: modern, tidy color palette
+  - Adds structured scales (50–900) for primary, accent, neutral, danger
+  - Exposes Tailwind v4 @theme tokens for utility classes (bg-primary-600, text-accent-500, etc.)
+  - Keeps existing variables for backward compatibility with current components
+*/
+
+@theme {
+  /* Map semantic tokens for Tailwind utilities */
+  --color-background: var(--bg-page);
+  --color-surface: var(--white);
+  --color-border: var(--stroke);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+
+  /* Scales (use CSS variables defined below) */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --color-danger-50: var(--danger-50);
+  --color-danger-100: var(--danger-100);
+  --color-danger-200: var(--danger-200);
+  --color-danger-300: var(--danger-300);
+  --color-danger-400: var(--danger-400);
+  --color-danger-500: var(--danger-500);
+  --color-danger-600: var(--danger-600);
+  --color-danger-700: var(--danger-700);
+  --color-danger-800: var(--danger-800);
+  --color-danger-900: var(--danger-900);
+}
+
 :root {
-  /* Primary Colors */
-  --primary: #001B55;
-  --accent: #FF9C04;
-  --white: #FFFFFF;
-  --light-bg: #F0F0F0;
-  --danger: #C81E1E;
+  /* Brand Bases (from brief) */
+  --primary-base: #001B55; /* Biru Tua */
+  --accent-base: #FF9C04;  /* Kuning Jingga */
+  --white: #FFFFFF;        /* Putih */
+  --light-bg: #F0F0F0;     /* Abu Muda */
+  --danger-base: #C81E1E;  /* Merah Tua (opsional) */
+
+  /* Scales generated via color-mix in oklab for smooth tints/shades */
+  /* Primary */
+  --primary-50:  color-mix(in oklab, var(--primary-base) 6%,  white);
+  --primary-100: color-mix(in oklab, var(--primary-base) 12%, white);
+  --primary-200: color-mix(in oklab, var(--primary-base) 24%, white);
+  --primary-300: color-mix(in oklab, var(--primary-base) 36%, white);
+  --primary-400: color-mix(in oklab, var(--primary-base) 48%, white);
+  --primary-500: color-mix(in oklab, var(--primary-base) 60%, white);
+  --primary-600: color-mix(in oklab, var(--primary-base) 72%, white);
+  --primary-700: color-mix(in oklab, var(--primary-base) 84%, white);
+  --primary-800: color-mix(in oklab, var(--primary-base) 92%, black);
+  --primary-900: color-mix(in oklab, var(--primary-base) 96%, black);
+
+  /* Accent */
+  --accent-50:  color-mix(in oklab, var(--accent-base) 6%,  white);
+  --accent-100: color-mix(in oklab, var(--accent-base) 12%, white);
+  --accent-200: color-mix(in oklab, var(--accent-base) 24%, white);
+  --accent-300: color-mix(in oklab, var(--accent-base) 36%, white);
+  --accent-400: color-mix(in oklab, var(--accent-base) 48%, white);
+  --accent-500: color-mix(in oklab, var(--accent-base) 60%, white);
+  --accent-600: color-mix(in oklab, var(--accent-base) 72%, white);
+  --accent-700: color-mix(in oklab, var(--accent-base) 84%, white);
+  --accent-800: color-mix(in oklab, var(--accent-base) 92%, black);
+  --accent-900: color-mix(in oklab, var(--accent-base) 96%, black);
+
+  /* Neutral (gray) scale based on white -> light gray -> ink */
+  --neutral-50:  #FAFAFA;
+  --neutral-100: #F5F5F5;
+  --neutral-200: #EEEFF2;
+  --neutral-300: #E5E7EB;
+  --neutral-400: #D1D5DB;
+  --neutral-500: #9CA3AF;
+  --neutral-600: #6B7280;
+  --neutral-700: #4B5563;
+  --neutral-800: #374151;
+  --neutral-900: #1F2937;
+
+  /* Danger scale */
+  --danger-50:  color-mix(in oklab, var(--danger-base) 6%,  white);
+  --danger-100: color-mix(in oklab, var(--danger-base) 12%, white);
+  --danger-200: color-mix(in oklab, var(--danger-base) 24%, white);
+  --danger-300: color-mix(in oklab, var(--danger-base) 36%, white);
+  --danger-400: color-mix(in oklab, var(--danger-base) 48%, white);
+  --danger-500: color-mix(in oklab, var(--danger-base) 60%, white);
+  --danger-600: color-mix(in oklab, var(--danger-base) 72%, white);
+  --danger-700: color-mix(in oklab, var(--danger-base) 84%, white);
+  --danger-800: color-mix(in oklab, var(--danger-base) 92%, black);
+  --danger-900: color-mix(in oklab, var(--danger-base) 96%, black);
+
+  /* Backward-compatible aliases (existing usage in components) */
+  --primary: var(--primary-700);
+  --accent: var(--accent-500);
+  --danger: var(--danger-600);
+
   /* RGB tokens for alpha usage */
   --primary-rgb: 0, 27, 85;
   --accent-rgb: 255, 156, 4;
+  --danger-rgb: 200, 30, 30;
   
-  /* Supporting Colors */
-  --primary-light: #1a4480;
-  --primary-dark: #000f33;
-  --accent-light: #ffb147;
-  --accent-dark: #e68803;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
+  /* Supporting Tokens */
+  --accent-light: var(--accent-400);
+  --accent-dark: var(--accent-600);
+  --text-muted: var(--neutral-600);
+  --border: var(--neutral-300);
   --shadow: rgba(0, 27, 85, 0.1);
 
   /* Design System Tokens */
   --bg-page: #FFFFFF;
-  --ink: #001B55;
+  --ink: var(--primary-800);
   --ink-inverse: #FFFFFF;
-  --muted: #6b7280;
-  --stroke: #e5e7eb;
+  --muted: var(--neutral-600);
+  --stroke: var(--neutral-300);
   
   /* Scale & Layout Tokens */
   --container: 1200px;
@@ -277,17 +392,32 @@ body {
   --mm-glass-brd: color-mix(in oklab, var(--stroke) 80%, transparent);
 }
 
-/* Soft decorative aura */
+  /* Soft decorative aura + mesh */
 .mm::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(520px 380px at 85% 12%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%),
-    radial-gradient(420px 300px at 10% 70%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 60%);
-  opacity: .18;
+    radial-gradient(520px 380px at 85% 12%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 60%),
+    radial-gradient(420px 300px at 10% 70%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 60%),
+    conic-gradient(from 210deg at 75% 10%, color-mix(in oklab, var(--accent) 6%, transparent), transparent 30% 80%, color-mix(in oklab, var(--accent) 6%, transparent));
+  opacity: .16;
 }
+
+/* Subtle dotted grid overlay */
+.mm::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask: linear-gradient(to bottom, rgba(0,0,0,.12), transparent 60%);
+}
+
+/* Depth for 3D micro-tilt */
+.mm .main-container { perspective: 1200px; }
 
 .mm .main-container {
   position: relative;
@@ -319,6 +449,29 @@ body {
     0 100%
   );
   box-shadow: 0 30px 60px -20px var(--shadow), 0 12px 24px -12px rgba(0,0,0,.06);
+  transform-style: preserve-3d;
+  transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.mm .heroCard:hover {
+  transform: rotateX(2deg) rotateY(-2deg) translateZ(0);
+  box-shadow: 0 40px 80px -26px var(--shadow), 0 16px 30px -16px rgba(0,0,0,.10);
+}
+
+/* Animated sheen sweeping along the diagonal notch */
+.mm .heroCard::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 60%;
+  height: 80%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.35) 40%, rgba(255,255,255,0.0) 70%);
+  filter: blur(8px);
+  transform: rotate(15deg);
+  mix-blend-mode: screen;
+  animation: mmSheen 6s linear infinite;
+  pointer-events: none;
 }
 
 .mm .heroCard > img {
@@ -419,6 +572,21 @@ body {
   box-shadow: 0 36px 72px -28px var(--shadow), 0 12px 26px -12px rgba(0,0,0,.12);
 }
 
+/* Stacked card accent behind */
+.mm .photoCard::before {
+  content: "";
+  position: absolute;
+  inset: -12px -12px auto auto;
+  width: 85%;
+  height: 85%;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 22%, white), color-mix(in oklab, var(--accent) 6%, transparent));
+  border-radius: calc(var(--radius) - 4px);
+  transform: rotate(6deg);
+  z-index: -1;
+  box-shadow: 0 24px 50px -20px rgba(0,0,0,.12);
+  opacity: .8;
+}
+
 /* Offset accent border */
 .mm .photoCard::after {
   content: "";
@@ -463,9 +631,12 @@ body {
   font-size: clamp(44px, 5.5vw, 64px);
   line-height: 0.9;
   font-weight: 900;
-  color: var(--ink);
   z-index: 1;
   letter-spacing: -0.02em;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--ink) 92%, black), color-mix(in oklab, var(--accent) 40%, var(--ink)) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (max-width: 1024px) {
@@ -496,6 +667,15 @@ body {
     position: relative;
     margin-top: var(--gutter-t);
   }
+}
+
+/* Animations */
+@keyframes mmSheen {
+  0% { transform: rotate(15deg) translateY(-10%) translateX(10%); opacity: .0; }
+  10% { opacity: .8; }
+  50% { transform: rotate(15deg) translateY(40%) translateX(-20%); opacity: .4; }
+  90% { opacity: .0; }
+  100% { transform: rotate(15deg) translateY(110%) translateX(-50%); opacity: .0; }
 }
 
 /* STATS */
