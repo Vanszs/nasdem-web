@@ -1,22 +1,22 @@
 import Hero from "@/components/hero";
-import ProfileSection from "@/components/profile";
-import ProgramsSection from "@/components/programs";
-import NewsSection from "@/components/news";
-import GallerySection from "@/components/gallery";
-import MembersSection from "@/components/members";
-import SocialSection from "@/components/social";
+import VisionMission from "@/components/highlight";
+import Programs from "@/components/programs";
+import Gallery from "@/components/gallery";
+import Members from "@/components/members";
+import News from "@/components/news";
+import Social from "@/components/social";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="space-y-10 md:space-y-16">
+    <main className="space-y-0">
       <Hero />
-      <ProfileSection />
-      <ProgramsSection />
-      <NewsSection />
-      <GallerySection />
-      <MembersSection />
-      <SocialSection />
+      <Programs />
+      <VisionMission />
+      <Members />
+      <Gallery />
+      <News />
+      <Social />
       <Footer />
     </main>
   );

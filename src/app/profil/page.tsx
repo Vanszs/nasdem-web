@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight, Check, MapPin, User2 } from "lucide-react";
 
 export const metadata = {
-  title: "Profil — DPD Partai NasDem Sidoarjo",
+  title: "Profil — DPD Partai  Nasdem Sidoarjo",
   description:
-    "Profil resmi DPD Partai NasDem Sidoarjo: visi-misi, program, struktur, dan kontak.",
+    "Profil resmi DPD Partai  Nasdem Sidoarjo: visi-misi, program, struktur, dan kontak.",
 };
 
 function Chip({ children }: { children: React.ReactNode }) {
@@ -23,13 +23,13 @@ export default function ProfilPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--stroke)] bg-[var(--white)] px-3 py-1 text-xs font-semibold text-[color:rgba(var(--primary-rgb),0.8)]">
-              DPD Partai NasDem Sidoarjo
+              DPD Partai  Nasdem Sidoarjo
             </div>
             <h1 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-[var(--primary)]">
               Profil Partai
             </h1>
             <p className="mt-2 max-w-2xl text-[var(--muted)]">
-              Media resmi DPD Partai NasDem Sidoarjo untuk memperkenalkan identitas,
+              Media resmi DPD Partai  Nasdem Sidoarjo untuk memperkenalkan identitas,
               visi-misi, program kerja, dokumentasi, dan struktur organisasi.
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function ProfilPage() {
         <div className="flex items-end justify-between gap-3">
           <div>
             <h2 className="section-title text-3xl md:text-4xl font-extrabold">Sorotan 2025</h2>
-            <p className="mt-2 text-[var(--muted)]">Inisiatif, kerja sama, dan aksi terbaru DPD NasDem Sidoarjo.</p>
+            <p className="mt-2 text-[var(--muted)]">Inisiatif, kerja sama, dan aksi terbaru DPD  Nasdem Sidoarjo.</p>
           </div>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,14 +57,14 @@ export default function ProfilPage() {
             <p className="mt-1 text-sm text-[var(--muted)]">Fokus pendidikan inklusif, beasiswa PIP/KIP, UMKM, dan urban farming.</p>
           </div>
           <div className="group rounded-2xl border border-[var(--stroke)] bg-[var(--white)] p-5 shadow-sm hover:shadow-md transition-all">
-            <div className="text-xs font-semibold text-[var(--muted)]">NasDem Muda — 25 Mar 2025</div>
+            <div className="text-xs font-semibold text-[var(--muted)]"> Nasdem Muda — 25 Mar 2025</div>
             <div className="mt-1 text-[var(--primary)] font-semibold">Pembukaan Pendaftaran Pemuda 17–30 Tahun</div>
             <p className="mt-1 text-sm text-[var(--muted)]">Edukasi politik, kepemimpinan, kunjungan lembaga, dan kegiatan sosial.</p>
           </div>
           <div className="group rounded-2xl border border-[var(--stroke)] bg-[var(--white)] p-5 shadow-sm hover:shadow-md transition-all">
             <div className="text-xs font-semibold text-[var(--muted)]">Aksi Sosial — Jul 2025</div>
             <div className="mt-1 text-[var(--primary)] font-semibold">Fogging & Pembagian Sembako</div>
-            <p className="mt-1 text-sm text-[var(--muted)]">Bersama NasDem Muda di Desa Sidorejo, Krian untuk pencegahan DBD.</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">Bersama  Nasdem Muda di Desa Sidorejo, Krian untuk pencegahan DBD.</p>
           </div>
           <div className="group rounded-2xl border border-[var(--stroke)] bg-[var(--white)] p-5 shadow-sm hover:shadow-md transition-all">
             <div className="text-xs font-semibold text-[var(--muted)]">Dukungan Pangan</div>
@@ -86,10 +86,10 @@ export default function ProfilPage() {
           <div className="md:col-span-7 lg:col-span-8">
             <div className="relative overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--white)] p-6 shadow-sm">
               <div className="inline-flex items-center gap-2 rounded-full border border-[var(--stroke)] bg-[var(--white)] px-3 py-1 text-xs font-semibold text-[color:rgba(var(--primary-rgb),0.8)]">
-                Tentang DPD NasDem Sidoarjo
+                Tentang DPD  Nasdem Sidoarjo
               </div>
               <p className="mt-3 text-[var(--muted)]">
-                DPD Partai NasDem Sidoarjo berkomitmen menghadirkan gerakan perubahan
+                DPD Partai  Nasdem Sidoarjo berkomitmen menghadirkan gerakan perubahan
                 melalui penguatan struktur, pembinaan kader, dan pelayanan publik.
                 Profil ini mengarsipkan program kerja, berita, dan kegiatan resmi untuk
                 membangun kredibilitas dan keterbukaan.
@@ -124,7 +124,7 @@ export default function ProfilPage() {
               <div className="mt-4">
                 <div className="text-sm font-semibold text-[var(--primary)]">Visi</div>
                 <p className="mt-1 text-sm text-[var(--muted)]">
-                  Mohon konfirmasi teks visi resmi DPD NasDem Sidoarjo.
+                  Mohon konfirmasi teks visi resmi DPD  Nasdem Sidoarjo.
                 </p>
               </div>
               <div className="my-5 h-px w-full bg-[var(--stroke)]" />
@@ -182,7 +182,7 @@ export default function ProfilPage() {
         <div className="flex items-end justify-between gap-3">
           <div>
             <h2 className="section-title text-3xl md:text-4xl font-extrabold">Struktur Inti</h2>
-            <p className="mt-2 text-[var(--muted)]">Pengurus inti DPD Partai NasDem Sidoarjo.</p>
+            <p className="mt-2 text-[var(--muted)]">Pengurus inti DPD Partai  Nasdem Sidoarjo.</p>
           </div>
           <Link href="/anggota" className="btn-outline text-sm px-4 py-2 rounded-full inline-flex items-center gap-2">
             Lihat struktur lengkap <ArrowRight className="h-4 w-4" />
@@ -224,11 +224,11 @@ export default function ProfilPage() {
             <div className="text-sm font-semibold text-[var(--primary)]">Media Sosial</div>
             <div className="mt-1 flex flex-wrap items-center gap-2 text-sm">
               <Link
-                href="https://instagram.com/sidoarjo.nasdem.id"
+                href="https://instagram.com/sidoarjo. Nasdem.id"
                 target="_blank"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--stroke)] px-3 py-1 text-[color:rgba(var(--primary-rgb),0.8)] hover:text-[var(--accent)]"
               >
-                Instagram @sidoarjo.nasdem.id
+                Instagram @sidoarjo. Nasdem.id
               </Link>
               <span className="text-[var(--muted)]">•</span>
               <span className="text-[var(--muted)]">Tambahkan tautan FB, YouTube, X/Twitter, TikTok</span>

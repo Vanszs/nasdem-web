@@ -24,7 +24,7 @@ export default function ProfileSection() {
             Profil Partai
           </h2>
           <p className="mt-3 max-w-2xl text-[var(--muted)]">
-            Partai Nusantara Sejahtera berdiri untuk mewujudkan Indonesia yang adil,
+            Partai  Nasdem Sejahtera berdiri untuk mewujudkan Indonesia yang adil,
             makmur, dan berkeadilan sosial. Fokus pada peningkatan kualitas
             pendidikan, kesehatan, dan ekonomi kerakyatan.
           </p>

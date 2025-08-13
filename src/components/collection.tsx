@@ -23,7 +23,9 @@ export default function Collection() {
             <p className="text-[var(--muted)] text-sm mb-4 max-w-sm">
               Poliform will showcase its vision of contemporary architecture, interior design trends, and innovative living at Salone del Mobile Milano 2024.
             </p>
-            <button className="btn-danger">View More →</button>
+            <button className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[var(--danger)] border-2 border-[var(--danger)] rounded-full hover:bg-[rgba(200,30,30,0.9)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--danger)] focus-visible:ring-offset-2">
+              View More →
+            </button>
           </div>
         </div>
 

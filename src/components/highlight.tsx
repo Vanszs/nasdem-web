@@ -1,53 +1,122 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
+import { Target, Eye, Users, Heart } from "lucide-react";
 
-export default function Highlight() {
+export default function VisionMission() {
+  const visions = [
+    {
+      title: "Visi",
+      content: "Mewujudkan Indonesia yang adil, sejahtera, dan bermartabat melalui tata kelola pemerintahan yang bersih dan partisipatif",
+      icon: Eye,
+      color: "from-blue-500 to-blue-600"
+    }
+  ];
+
+  const missions = [
+    {
+      title: "Kedaulatan Rakyat",
+      description: "Memperkuat demokrasi dan partisipasi aktif masyarakat dalam pembangunan",
+      icon: Users
+    },
+    {
+      title: "Keadilan Sosial",
+      description: "Mengurangi kesenjangan ekonomi melalui program pemberdayaan yang berkelanjutan",
+      icon: Heart
+    },
+    {
+      title: "Pemerintahan Bersih",
+      description: "Membangun birokrasi yang profesional, transparan, dan akuntabel",
+      icon: Target
+    }
+  ];
+
   return (
-    <section id="highlight" className="site-container py-16 md:py-20 grid md:grid-cols-2 gap-8 items-stretch scroll-mt-24 md:scroll-mt-28">
-      <div className="relative overflow-hidden rounded-3xl border border-[var(--stroke)] bg-white shadow-lg">
-        <Image
-          src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1640&h=1000&dpr=1"
-          alt="Gallery of elegance"
-          width={1600}
-          height={1000}
-          className="h-full w-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(var(--primary-rgb),0.7), rgba(var(--primary-rgb),0.2), transparent)",
-          }}
-        />
-        <div className="absolute bottom-6 left-6 right-6">
-          <p className="inline-block text-xs tracking-wide uppercase text-[var(--accent)] px-3 py-1 rounded-full border border-[color:rgba(var(--accent-rgb),0.6)] bg-[color:rgba(var(--primary-rgb),0.8)] backdrop-blur font-semibold">
-            Aesthetic
+    <section className="py-24 px-6 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary)] mb-6">
+            Visi & Misi <span className="text-[var(--accent)]">Partai</span>
+          </h2>
+          <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+            Landasan ideologi dan komitmen kami dalam membangun Indonesia yang lebih baik
           </p>
-          <h3 className="mt-3 text-2xl md:text-3xl font-bold text-white">Into a gallery of elegance</h3>
-        </div>
-      </div>
+        </motion.div>
 
-      <div className="grid gap-6 content-between">
-        <div className="card-surface p-8">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--primary)]">Modern <span className="text-[var(--accent)]">Minimalist</span></h2>
-          <p className="mt-3 text-[var(--muted)]">
-            Aesthetic furniture where every piece tells a story of style.
-          </p>
-        </div>
-        <div className="card-surface p-6 flex items-center justify-between hover:shadow-lg transition-all duration-300">
-          <div>
-            <div className="text-lg font-semibold text-[var(--primary)]">Indulge in the artistry of everyday living</div>
-            <p className="text-[var(--muted)] text-sm mt-1">Elegance • Timeless</p>
+        {/* Vision Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="card-surface p-8 md:p-12 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--primary)]/80 opacity-5"></div>
+            <div className="relative z-10">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary)]/80 flex items-center justify-center">
+                <Eye className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[var(--primary)] mb-6">
+                Visi Kami
+              </h3>
+              <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-4xl mx-auto">
+                "Mewujudkan Indonesia yang adil, sejahtera, dan bermartabat melalui tata kelola pemerintahan yang bersih dan partisipatif"
+              </p>
+            </div>
           </div>
-          <div className="h-24 w-24 overflow-hidden rounded-2xl border-2 border-[color:rgba(var(--accent-rgb),0.3)]">
-            <Image
-              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1"
-              alt="Mini card"
-              width={200}
-              height={200}
-              className="h-full w-full object-cover"
-            />
+        </motion.div>
+
+        {/* Mission Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-[var(--primary)] text-center mb-12">
+            Misi Kami
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {missions.map((mission, index) => {
+              const IconComponent = mission.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                  className="group"
+                >
+                  <div className="card-surface h-full p-8 text-center hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-dark)] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--accent-dark)] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold text-[var(--primary)] mb-4">
+                        {mission.title}
+                      </h4>
+                      <p className="text-[var(--text-secondary)] leading-relaxed">
+                        {mission.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

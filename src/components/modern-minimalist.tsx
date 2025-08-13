@@ -4,7 +4,7 @@ export default function ModernMinimalist() {
   return (
     <section id="modern" className="mm site-container scroll-mt-24 md:scroll-mt-28">
       <div className="main-container">
-        {/* Main hero image dengan integrated text card */}
+        {/* Enhanced hero image with integrated text card */}
         <div style={{ position: 'relative' }}>
           <figure className="heroCard card-img">
             <span className="badge">Gorgeous Interior</span>
@@ -16,19 +16,19 @@ export default function ModernMinimalist() {
               style={{ width: '100%', height: 'auto' }}
             />
             
-            {/* Text card terintegrasi dengan cut-out */}
+            {/* Enhanced integrated text card with glass morphism */}
             <article className="textCard">
               <span className="badge">Aesthetic</span>
-              <p className="body">Aesthetic furniture where every piece tells a story of style</p>
+              <p className="body">Aesthetic furniture where every piece tells a story of style and modern elegance</p>
               <h3>Into a gallery<br />of elegance</h3>
             </article>
           </figure>
 
-          {/* Title yang menempel ke gambar */}
+          {/* Enhanced title that sticks to the image */}
           <h2 className="title">Modern<br />Minimalist</h2>
         </div>
 
-        {/* Right side photo card */}
+        {/* Enhanced right side photo card */}
         <div className="right-content">
           <figure className="photoCard card-img">
             <span className="badge">Best Furniture</span>
@@ -46,22 +46,22 @@ export default function ModernMinimalist() {
         </div>
       </div>
 
-      {/* STATS */}
+      {/* ENHANCED STATS SECTION */}
       <div className="stats">
         <div className="grid">
-          <div>
+          <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <div className="num">500+</div>
             <div className="lab">Products</div>
           </div>
-          <div>
+          <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <div className="num">20+</div>
             <div className="lab">Projects</div>
           </div>
-          <div>
+          <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <div className="num">50+</div>
             <div className="lab">Satisfied Customers</div>
           </div>
-          <div>
+          <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <div className="num">1st</div>
             <div className="lab">Top 1 in Paris</div>
           </div>

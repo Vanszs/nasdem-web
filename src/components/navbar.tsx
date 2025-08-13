@@ -17,37 +17,42 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--stroke)] shadow-sm">
-      <div className="site-container h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--border)] shadow-sm">
+      <div className="w-full max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Logo - positioned to the left */}
         <Link
           href="/"
-          className="font-extrabold text-2xl tracking-tight text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+          className="font-extrabold text-2xl tracking-tight text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:scale-105 transition-transform duration-200"
         >
-          Partai<span className="text-[var(--accent)]">Nusantara</span>
+          Partai<span className="text-[var(--accent)]"> Nasdem</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          <nav className="flex items-center gap-8 text-sm font-medium text-[color:rgba(var(--primary-rgb),0.75)]">
+        {/* Navigation and Login - positioned to the right */}
+        <div className="hidden md:flex items-center gap-8 ml-auto">
+          <nav className="flex items-center gap-6 text-sm font-medium text-[var(--text-muted)]">
             {navItems.map(([label, href]) => (
               <Link
                 key={label}
                 href={href}
-                className="transition-colors hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="transition-colors hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white py-2 px-1"
               >
                 {label}
               </Link>
             ))}
           </nav>
+          
+          {/* Fixed Login Button */}
           <Link
             href="/admin/login"
-            className="btn-outline text-sm px-4 py-2 rounded-full"
+            className="btn-outline text-xs px-3 py-1.5"
           >
             Login Admin
           </Link>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 rounded-full border border-[color:rgba(var(--primary-rgb),0.2)] hover:bg-[color:rgba(var(--primary-rgb),0.05)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+          className="md:hidden p-2 rounded-full border border-[var(--border)] hover:bg-[var(--light-bg)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           aria-label="Toggle menu"
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -65,23 +70,25 @@ export default function Navbar() {
       {open && (
         <div
           id="mobile-menu"
-          className="md:hidden border-t border-[var(--stroke)] bg-white/95 backdrop-blur-sm"
+          className="md:hidden border-t border-[var(--border)] bg-white/95 backdrop-blur-sm"
         >
-          <div className="site-container py-3 flex flex-col gap-2">
+          <div className="w-full max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
             {navItems.map(([label, href]) => (
               <Link
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-[var(--primary)] hover:text-[var(--accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded"
+                className="py-3 text-[var(--primary)] hover:text-[var(--accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-lg px-2"
               >
                 {label}
               </Link>
             ))}
+            
+            {/* Fixed Mobile Login Button */}
             <Link
               href="/admin/login"
               onClick={() => setOpen(false)}
-              className="mt-2 btn-outline text-center"
+              className="mt-3 btn-outline text-xs px-3 py-1.5"
             >
               Login Admin
             </Link>

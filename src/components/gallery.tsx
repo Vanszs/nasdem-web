@@ -77,8 +77,9 @@ export default function GallerySection() {
 
           {/* CTA card: Lihat semua galeri (fills top-right leftover space) */}
           <div className="md:col-span-3 card-surface p-6 flex items-center justify-center text-center">
-            <a href="/galeri" className="inline-flex items-center gap-2 text-[var(--primary)] font-semibold">
-              Lihat Semua Galeri <span className="text-[var(--accent)]">→</span>
+            <a href="/galeri" className="btn-secondary text-sm px-4 py-2 inline-flex items-center gap-2 group">
+              Lihat Semua Galeri 
+              <span className="transform transition-transform group-hover:translate-x-1 text-[var(--accent)]">→</span>
             </a>
           </div>
 

@@ -9,7 +9,7 @@ export default function Footer() {
             Terhubung dengan <span className="text-[var(--accent)]">Kami</span>
           </h3>
           <p className="text-blue-200 mt-3 text-sm max-w-xl">
-            Ikuti kabar dan kegiatan terbaru Partai Nusantara Sejahtera. Bersama, kita wujudkan Indonesia yang adil dan sejahtera.
+            Ikuti kabar dan kegiatan terbaru Partai  Nasdem Sejahtera. Bersama, kita wujudkan Indonesia yang adil dan sejahtera.
           </p>
         </div>
         <div className="card-surface rounded-3xl overflow-hidden border border-[color:rgba(var(--primary-rgb),0.4)]">
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
         <div className="flex items-end md:items-center justify-end">
           <div className="text-3xl md:text-5xl font-extrabold text-white">
-            Partai<span className="text-[var(--accent)]">Nusantara</span>
+            Partai<span className="text-[var(--accent)]"> Nasdem</span>
           </div>
         </div>
       </div>

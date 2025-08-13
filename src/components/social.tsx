@@ -2,9 +2,9 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function SocialSection() {
   const items = [
-    { name: "Instagram", handle: "@partai.nusantara", href: "#", icon: Instagram },
-    { name: "Facebook", handle: "Partai Nusantara", href: "#", icon: Facebook },
-    { name: "X / Twitter", handle: "@nusantara_id", href: "#", icon: Twitter },
+    { name: "Instagram", handle: "@partai. Nasdem", href: "#", icon: Instagram },
+    { name: "Facebook", handle: "Partai  Nasdem", href: "#", icon: Facebook },
+    { name: "X / Twitter", handle: "@ Nasdem_id", href: "#", icon: Twitter },
   ];
 
   return (

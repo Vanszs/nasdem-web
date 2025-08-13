@@ -19,7 +19,7 @@ export default function MembersSection() {
         <h2 className="section-title text-4xl md:text-5xl font-extrabold">Bagan & Daftar Anggota</h2>
         <Link
           href="/anggota"
-          className="btn-outline text-sm px-4 py-2 rounded-full inline-flex items-center gap-2"
+          className="btn-outline text-sm px-4 py-2 inline-flex items-center gap-2"
         >
           Lihat semua anggota
           <ArrowRight className="h-4 w-4" />
