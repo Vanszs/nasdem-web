@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative pt-6 scroll-mt-24 md:scroll-mt-28">
-      <div className="site-container">
-        <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-blue-50 to-gray-50 shadow-xl no-max-width">
+    <section className="relative pt-6">
+      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-10">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-amber-50/10 to-stone-100/5">
           <Image
             src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1960&h=1100&dpr=1"
             alt="Modern living room"
@@ -16,13 +16,7 @@ export default function Hero() {
             priority
           />
 
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgba(var(--primary-rgb),0.7), rgba(var(--primary-rgb),0.2), transparent)",
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
           {/* Main title overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
@@ -41,12 +35,12 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-gray-200 max-w-sm shadow-lg"
+            className="absolute bottom-8 left-8 bg-black/70 backdrop-blur-md rounded-2xl p-6 border border-white/10 max-w-sm"
           >
-            <p className="text-[var(--primary)] text-sm leading-relaxed mb-4">
+            <p className="text-neutral-200 text-sm leading-relaxed mb-4">
               Crafting spaces that harmonize modern aesthetics with timeless elegance, our contemporary interior designs breathe life into every room, redefining the essence of chic living.
             </p>
-            <button className="bg-[var(--accent)] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[color:rgba(var(--accent-rgb),0.9)] transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+            <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-neutral-800 transition-colors flex items-center gap-2">
               View More <span>→</span>
             </button>
           </motion.div>
@@ -56,10 +50,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-[var(--stroke)] shadow-lg"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md rounded-2xl p-4 border border-white/10"
           >
             <div className="flex gap-2">
-              <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-[color:rgba(var(--accent-rgb),0.3)]">
+              <div className="w-16 h-16 rounded-xl overflow-hidden">
                 <Image
                   src="https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg?auto=compress&cs=tinysrgb&w=200"
                   alt="Interior 1"
@@ -68,7 +62,7 @@ export default function Hero() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-[color:rgba(var(--accent-rgb),0.3)]">
+              <div className="w-16 h-16 rounded-xl overflow-hidden">
                 <Image
                   src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=200"
                   alt="Interior 2"
@@ -85,16 +79,16 @@ export default function Hero() {
             initial={{ opacity: 0, rotate: -45, scale: 0.8 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="absolute top-8 right-8 w-24 h-24 rounded-full bg-[color:rgba(var(--primary-rgb),0.9)] backdrop-blur-md border border-[color:rgba(var(--primary-rgb),0.6)] flex items-center justify-center shadow-lg"
+            className="absolute top-8 right-8 w-24 h-24 rounded-full bg-neutral-800/80 backdrop-blur-md border border-white/20 flex items-center justify-center"
           >
             <div className="text-center">
-              <div className="text-xs text-[var(--accent)] uppercase tracking-wider font-semibold">Modern</div>
-              <div className="text-xs text-white uppercase tracking-wider">Minimalist</div>
-              <div className="text-xs text-[var(--accent)] uppercase tracking-wider font-semibold">Gallery</div>
+              <div className="text-xs text-neutral-300 uppercase tracking-wider">Modern</div>
+              <div className="text-xs text-neutral-300 uppercase tracking-wider">Minimalist</div>
+              <div className="text-xs text-neutral-300 uppercase tracking-wider">Gallery</div>
             </div>
           </motion.div>
 
-          <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-[94%] -translate-x-1/2 rounded-full bg-[color:rgba(var(--primary-rgb),0.3)] blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-[94%] -translate-x-1/2 rounded-full bg-black/60 blur-2xl" />
         </div>
       </div>
     </section>

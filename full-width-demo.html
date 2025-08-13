@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Width Layout System Demo</title>
+    <style>
+        :root {
+            --primary: #001B55;
+            --accent: #FF9C04;
+            --white: #FFFFFF;
+            --light-bg: #F0F0F0;
+            --container-max: 1440px;
+            --container: 1200px;
+            --radius: 20px;
+            --page-gutter: clamp(16px, 2.5vw, 40px);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+        }
+
+        /* NEW CONTAINER SYSTEM */
+        .site-container {
+            width: min(calc(100vw - 2 * var(--page-gutter)), var(--container-max));
+            margin-inline: auto;
+        }
+
+        .site-container--bleed {
+            width: calc(100vw - 2 * var(--page-gutter));
+            margin-inline: auto;
+        }
+
+        .site-container--content {
+            width: min(calc(100vw - 2 * var(--page-gutter)), var(--container));
+            margin-inline: auto;
+        }
+
+        .no-max-width {
+            max-width: none !important;
+        }
+
+        /* Demo styling */
+        .demo-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+        }
+
+        .demo-box {
+            background: var(--light-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid var(--accent);
+            margin: 2rem 0;
+        }
+
+        .mm-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .mm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mm-hero-card, .mm-photo-card {
+            background: #f0f0f0;
+            border-radius: var(--radius);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mm-photo-card {
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center; padding: 2rem 0; color: var(--primary);">
+    Full-Width Layout System
+</h1>
+
+<!-- HERO - Full Bleed -->
+<section style="padding: 2rem 0;">
+    <div class="site-container--bleed">
+        <div class="demo-hero no-max-width">
+            <div>
+                <h2 style="font-size: 3rem; margin: 0;">HERO</h2>
+                <p>.site-container--bleed</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODERN MINIMALIST - Full Bleed -->
+<section style="padding: 2rem 0;">
+    <div class="site-container--bleed">
+        <div class="mm-grid">
+            <div class="mm-hero-card">
+                <strong>Hero Card (16:9)</strong>
+            </div>
+            <div class="mm-photo-card">
+                <strong>Photo Card (1:1)</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STANDARD CONTAINER -->
+<div class="site-container">
+    <div class="demo-box">
+        <h3>Standard Container</h3>
+        <p>.site-container</p>
+        <small>Max-width: 1440px</small>
+    </div>
+</div>
+
+<!-- CONTENT CONTAINER -->
+<div class="site-container--content">
+    <div class="demo-box">
+        <h3>Content Container</h3>
+        <p>.site-container--content</p>
+        <small>Max-width: 1200px</small>
+    </div>
+</div>
+
+<!-- MIGRATION GUIDE -->
+<section style="background: #f8f9fa; padding: 3rem 0; margin-top: 3rem;">
+    <div class="site-container--content">
+        <h3 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">
+            Migration Guide
+        </h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+                <h4 style="color: #dc3545;">❌ BEFORE</h4>
+                <pre style="background: #fff; padding: 1rem; border-radius: 8px; font-size: 0.8rem;"><code>container mx-auto max-w-6xl px-4
+w-11/12 mx-auto
+max-w-[1200px] px-4 sm:px-6</code></pre>
+            </div>
+            
+            <div>
+                <h4 style="color: #28a745;">✅ AFTER</h4>
+                <pre style="background: #fff; padding: 1rem; border-radius: 8px; font-size: 0.8rem;"><code>site-container
+site-container--bleed  
+site-container--content</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

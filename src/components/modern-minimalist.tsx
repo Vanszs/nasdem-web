@@ -2,55 +2,68 @@ import Image from "next/image";
 
 export default function ModernMinimalist() {
   return (
-    <section className="bg-gray-100 py-20">
-      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <div className="order-2 lg:order-1">
-            <div className="inline-block text-xs tracking-wide uppercase text-orange-500 px-3 py-1 rounded-full border border-orange-200 bg-orange-50 mb-6 font-semibold">
-              Gorgeous Interior
-            </div>
-            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.9] mb-6 text-blue-900">
-              Modern
-              <br />
-              <span className="text-orange-500">Minimalist</span>
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-lg mb-8">
-              Experience the perfect blend of contemporary design and functional elegance. 
-              Our curated collection brings sophistication to every corner of your living space.
-            </p>
-            <div className="flex gap-4">
-              <button className="btn-primary">Explore Collection</button>
-              <button className="btn-outline">View Gallery</button>
-            </div>
-          </div>
-
-          {/* Right side - Image */}
-          <div className="order-1 lg:order-2 relative">
-            <div className="card-surface relative overflow-hidden">
-              <Image
-                src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&dpr=1"
-                alt="Modern minimalist interior"
-                width={1400}
-                height={900}
-                className="w-full h-[500px] md:h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
-              
-              {/* Floating elements */}
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                <div className="bg-white/95 backdrop-blur rounded-2xl p-4 border border-gray-200 shadow-lg">
-                  <div className="text-sm text-gray-600">Starting from</div>
-                  <div className="text-2xl font-bold text-blue-900">$2,599</div>
-                </div>
-                <div className="h-12 w-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-semibold cursor-pointer hover:bg-orange-600 transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
-                  →
-                </div>
-              </div>
-            </div>
+    <section id="modern" className="mm site-container scroll-mt-24 md:scroll-mt-28">
+      <div className="main-container">
+        {/* Main hero image dengan integrated text card */}
+        <div style={{ position: 'relative' }}>
+          <figure className="heroCard card-img">
+            <span className="badge">Gorgeous Interior</span>
+            <Image
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&h=900&q=80"
+              alt="Modern minimalist living room with neutral tones"
+              width={1400}
+              height={900}
+              style={{ width: '100%', height: 'auto' }}
+            />
             
-            {/* Decorative shadow */}
-            <div className="pointer-events-none absolute -bottom-6 left-1/2 h-12 w-[90%] -translate-x-1/2 rounded-full bg-blue-900/20 blur-2xl" />
+            {/* Text card terintegrasi dengan cut-out */}
+            <article className="textCard">
+              <span className="badge">Aesthetic</span>
+              <p className="body">Aesthetic furniture where every piece tells a story of style</p>
+              <h3>Into a gallery<br />of elegance</h3>
+            </article>
+          </figure>
+
+          {/* Title yang menempel ke gambar */}
+          <h2 className="title">Modern<br />Minimalist</h2>
+        </div>
+
+        {/* Right side photo card */}
+        <div className="right-content">
+          <figure className="photoCard card-img">
+            <span className="badge">Best Furniture</span>
+            <Image
+              src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&h=800&q=80"
+              alt="Designer lounge chair in outdoor setting"
+              width={800}
+              height={800}
+              style={{ width: '100%', height: 'auto' }}
+            />
+            <button className="btn-round" aria-label="Explore">
+              ↗
+            </button>
+          </figure>
+        </div>
+      </div>
+
+      {/* STATS */}
+      <div className="stats">
+        <div className="grid">
+          <div>
+            <div className="num">500+</div>
+            <div className="lab">Products</div>
+          </div>
+          <div>
+            <div className="num">20+</div>
+            <div className="lab">Projects</div>
+          </div>
+          <div>
+            <div className="num">50+</div>
+            <div className="lab">Satisfied Customers</div>
+          </div>
+          <div>
+            <div className="num">1st</div>
+            <div className="lab">Top 1 in Paris</div>
           </div>
         </div>
       </div>
